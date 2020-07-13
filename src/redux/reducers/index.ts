@@ -2,13 +2,13 @@
  * @description: 合并 reducer 函数
  * @author: Star Shi
  * @Date: 2020-07-09 16:35:43
- * @LastEditTime: 2020-07-09 18:39:18
+ * @LastEditTime: 2020-07-13 15:22:53
  */ 
 
-import userReducer from "./user_reducer";
+import commonReducer from "./common";
 
 const thunkReducer = {
-  userReducer
+  commonReducer
 }
 
  export default thunkReducer;
