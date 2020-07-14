@@ -2,11 +2,11 @@
  * @description: redux 的 actions 配置
  * @author: Star Shi
  * @Date: 2020-07-09 17:17:05
- * @LastEditTime: 2020-07-13 16:08:32
+ * @LastEditTime: 2020-07-14 15:04:29
  */
 
 import { Dispatch } from "redux";
-import { SET_USER_INFO } from "../constants";
+import { SET_USER_INFO , SET_TOKEN} from "../constants";
 
 export const setUserInfo = (userInfo: any) => ({
   type: SET_USER_INFO,
@@ -20,3 +20,8 @@ export const setUserInfoAsync = (userInfo: any) => {
     }, 2000);
   };
 };
+
+export const setToken = (token: string) => ({
+  type: SET_TOKEN,
+  payload: token,
+});

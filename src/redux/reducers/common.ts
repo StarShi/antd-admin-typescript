@@ -2,22 +2,31 @@
  * @description: 公共的 reducer 函数
  * @author: Star Shi
  * @Date: 2020-07-09 17:22:55
- * @LastEditTime: 2020-07-13 16:23:03
+ * @LastEditTime: 2020-07-14 15:42:28
  */
 
 import { AnyAction } from "redux";
-import { SET_USER_INFO } from "../constants";
+import { SET_USER_INFO , SET_TOKEN} from "../constants";
 
-const initState = {
+interface CommonStateType {
+  userInfo?: any,
+  token?: string,
+}
+
+const initState:CommonStateType = {
   userInfo: {},
+  token: "",
 };
-export default function (state: object = initState, action: AnyAction) {
+export default function (state: object = initState, action: AnyAction):CommonStateType {
   switch (action.type) {
     case SET_USER_INFO:
       return Object.assign({}, state, {
         userInfo: action.payload,
       });
-
+    case SET_TOKEN:
+      return Object.assign({}, state, {
+        token: action.token,
+      });
     default:
       return state;
   }

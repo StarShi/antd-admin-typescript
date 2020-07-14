@@ -3,7 +3,10 @@ import { Button } from "antd";
 import "./App.less";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserInfo, setUserInfoAsync } from "./redux/actions/common";
+import { IState } from "./interface/redux";
+import { Http } from "./request/http";
 
+new Http();
 function App() {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state: IState) => state.commonReducer);
