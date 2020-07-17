@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "antd";
-import "./test_redux.less";
+import "./TestRedux.less";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserInfo, setUserInfoAsync } from "../../redux/actions/common";
 import { IState } from "../../interface/redux";

@@ -1,17 +1,15 @@
 import React from "react";
 import "./App.less";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import routes from "./router";
+import  { renderRoutes } from  "react-router-config";
+ // import ScrollToTop from "./components/scroll_to_top/ScrollToTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Switch>
-          {routes.map((route, index) => {
-            return <Route path={route.path} exact component={route.component} key={index}></Route>;
-          })}
-        </Switch>
+        {renderRoutes(routes)}
       </BrowserRouter>
     </>
   );
