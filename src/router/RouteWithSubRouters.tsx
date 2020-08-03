@@ -2,7 +2,7 @@
  * @description: 返回具体的路由导航
  * @author: Star Shi
  * @Date: 2020-07-17 11:12:43
- * @LastEditTime: 2020-07-17 16:18:18
+ * @LastEditTime: 2020-08-03 10:40:43
  **/
 
 import React from "react";
@@ -10,6 +10,7 @@ import { Switch, Route } from "react-router-dom";
 // import { RouteConfig } from "../interface/router";
 import { RouteConfigComponentProps, RouteConfig } from "react-router-config";
 
+// 处理子路由的组件 返回具体的路由导航
 const RouteWithSubRouters = (props: RouteConfigComponentProps) => {
   const { route, match } = props;
   if (route) {
@@ -21,7 +22,7 @@ const RouteWithSubRouters = (props: RouteConfigComponentProps) => {
               <Route
                 key={childRoute.key || childIndex}
                 path={`${match.path}${childRoute.path || ""}`}
-                // exact={childRoute.exact}
+                exact={childRoute.exact}
                 strict={childRoute.strict}
                 render={(props: RouteConfigComponentProps) => {
                   if (childRoute.render) {

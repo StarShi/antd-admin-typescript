@@ -2,7 +2,7 @@
  * @description: 路由配置
  * @author: Star Shi
  * @Date: 2020-07-16 17:09:21
- * @LastEditTime: 2020-07-17 16:22:45
+ * @LastEditTime: 2020-08-03 11:11:58
  **/
 import { RouteConfig } from "react-router-config";
 import RouteWithSubRouters from "./RouteWithSubRouters";
@@ -12,8 +12,8 @@ import ArticleTab from "../views/blog/article_tab/ArticleTab";
 const routes: RouteConfig[] = [
   {
     path: "/",
-    exact: true,
     name: "首页",
+    exact: true,
     component: require("../views/home/Home").default,
   },
   {
@@ -25,17 +25,16 @@ const routes: RouteConfig[] = [
   {
     path: "/blog",
     name: "博客管理",
-    exact: true,
-    component: require("../views/home/Home").default,
+    component: RouteWithSubRouters,
     routes: [
       {
-        path: "/blog/article",
+        path: "/article",
         name: "文章管理",
         exact: true,
         component: Article,
       },
       {
-        path: "/blog/article_tab",
+        path: "/article_tab",
         name: "标签管理",
         exact: true,
         component: ArticleTab,

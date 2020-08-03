@@ -2,7 +2,7 @@
  * @description: 公共的 reducer 函数
  * @author: Star Shi
  * @Date: 2020-07-09 17:22:55
- * @LastEditTime: 2020-07-14 15:42:28
+ * @LastEditTime: 2020-08-03 10:34:17
  */
 
 import { AnyAction } from "redux";
@@ -25,7 +25,7 @@ export default function (state: object = initState, action: AnyAction):CommonSta
       });
     case SET_TOKEN:
       return Object.assign({}, state, {
-        token: action.token,
+        token: action.payload,
       });
     default:
       return state;
